@@ -1,0 +1,53 @@
+import java.util.*;
+
+public class ArrayListEg
+
+{
+	public static void main(String[] args)
+	{
+		HashMap<String, String> map1 = new HashMap<String, String>();
+		map1.put("CSS", "style");
+		map1.put("HTML", "Markup");
+		map1.put("Oracle", "Database");
+		map1.put("XML", "Data");
+	
+		printDetails(map1);
+    /* 
+    Map: {CSS=style, XML=Data, HTML=Markup, Oracle=Database}
+    Map Size: 4
+    Map is empty: false
+    Map contains CSS Key: true
+    Usage: style
+    removed: Markup
+    Map Size: 3
+    */
+    
+		map1.clear();
+		System.out.println();
+		System.out.println("***AFTER CLEARING***");
+		printDetails(map1);
+    /* 
+    Map: {CSS=style, XML=Data, HTML=Markup, Oracle=Database}
+    Map Size: 4
+    Map is empty: false
+    Map contains CSS Key: true
+    Usage: style
+    removed: Markup
+    Map Size: 3
+    */
+    
+	}
+	
+	public static void printDetails(HashMap<String, String> map1)
+	{
+		String usage = map1.get("CSS");
+		System.out.println("Map: " + map1);
+		System.out.println("Map Size: " + map1.size());
+		System.out.println("Map is empty: " + map1.isEmpty());
+		System.out.println("Map contains CSS Key: " + map1.containsKey("CSS"));
+		System.out.println("Usage: " + usage);
+		System.out.println("removed: " + map1.remove("HTML"));
+		System.out.println("Map Size: " + map1.size());
+	}
+
+}
